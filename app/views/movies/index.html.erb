@@ -1,0 +1,20 @@
+<h1>It is <%= Time.now.strftime('%A, %d %b %Y %l:%M %p') %>.</h1>
+
+<h2>Now Playing</h2>
+<br>
+
+<% @movies.each_slice(3) do |movie_slice| %>
+  <div class="row">
+    <% movie_slice.each do |movie| %>
+      <div class ="col-md-4 col-sm-6 movie-index-single">
+        <div class="well">
+          <h2>Title: <%= movie.title %></a></h2>
+          <h2>Runtime: <%= movie.runtime %></h2>
+          <h2>Rating: <%= movie.rating %></h2>
+          <img src="<%= movie.img %>">
+          <h2>Showtimes: <%= movie.showtimes %></h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

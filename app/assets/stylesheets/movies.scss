@@ -1,3 +1,13 @@
-// Place all the styles related to the movies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+  color: green;
+  background-image: url('plain-wood-backgrounds.jpg');
+}
+
+.movie-index-single {
+  height: 1000px;
+}
+
+.well img {
+  width: 100%;
+}
