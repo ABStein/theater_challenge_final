@@ -1,0 +1,19 @@
+<h1>Add a Movie</h1>
+
+<%= form_tag '/movies', method: :post do %>
+  <div>
+    Title: <input type="text" name="title">
+  </div>
+    <div>
+    Rating: <input type="text" name="rating">
+  </div>
+    <div>
+    Runtime: <input type="text" name="runtime">
+  </div>
+    <div>
+    Showtimes: <input type="text" name="time">
+  </div>
+    <div>
+      <input type="submit" value="Save Movie">
+  </div>
+<% end %>
