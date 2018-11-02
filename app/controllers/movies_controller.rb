@@ -17,7 +17,6 @@ class MoviesController < ApplicationController
 
      movie.save
      flash[:success] = "Movie successfully Created"
-     showtime
   end
 
   def show

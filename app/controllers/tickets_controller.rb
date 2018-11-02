@@ -15,7 +15,7 @@ class TicketsController < ApplicationController
     ticket.save
 
     if ticket.save
-     ticket.increment
+     ticket.increment!(:seats_sold)
      flash[:success] = "Your ticket to #{@showtime.movie.title} was purchased. Check you email now! "
      redirect_to '/'
     end
