@@ -12,13 +12,11 @@ class MoviesController < ApplicationController
                      title: params[:title],
                      rating: params[:rating],
                      runtime: params[:runtime],
-                     img: params[:img],
-                     showtimes: params[:showtimes]
+                     img: params[:img]
                      )
 
      movie.save
      flash[:success] = "Movie successfully Created"
-     redirect_to '/'
   end
 
   def show
@@ -35,8 +33,7 @@ class MoviesController < ApplicationController
                             title: params[:title],
                             rating: params[:rating],
                             runtime: params[:runtime],
-                            img: params[:img],
-                            showtimes: params[:showtimes]
+                            img: params[:img]
                             )
 
     @movie.save
