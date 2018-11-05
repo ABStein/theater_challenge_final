@@ -1,0 +1,20 @@
+<h1>All Tickets Sold</h1>
+
+<div class="row">
+  <% @tickets.each do |ticket| %>
+    <div class ="table-md-4 table-sm-6">
+      <div>
+        <ul>
+        <h2>Name: <%= ticket.full_name %></h2>
+        <h2>Email: <%= ticket.email %></h2>
+        <h2>Credit Card Number: <%= ticket.credit_card_number %></h2>
+        <h2>Movie: <%= ticket.showtime.movie.title %></h2>
+        <h2>Showtime: <%= ticket.showtime.start_time.strftime('%A, %d %b %Y %l:%M %p') %></a></h2>
+        <h2>Theater: <%= ticket.showtime.theater.name %></h2>
+        </ul>
+        <br>
+      </div>
+    </div>
+  <% end %>
+</div>
+

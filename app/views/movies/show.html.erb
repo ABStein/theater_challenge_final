@@ -5,13 +5,14 @@
 <img src="<%= @movie.img %>">
 
 <h2>Rating: <%= @movie.rating %></h2>
-<h2>Runtime: <%= @movie.runtime %> Minutes</h2>
+<h2>Runtime: <%= @movie.runtime %> minutes</h2>
  <h2>Showtime:<div>
 <% @movie.showtimes.each do |showtime| %>
   <%= showtime.start_time.strftime('%A, %d %b %Y %l:%M %p') %>
   <%= link_to "Buy Movie", "/tickets/new?showtime_id=#{showtime.id}", class: "btn btn-success" %>
 <% end %>
 </div></h2>
+
 
 
 <%= link_to "Edit Movie", "/movies/#{ @movie.id }/edit", class: "btn btn-warning" %>

@@ -1,4 +1,8 @@
 class TicketsController < ApplicationController
+  def index
+    @tickets = Ticket.all
+  end
+
   def new
     @showtime = Showtime.find(params[:showtime_id])
   end
