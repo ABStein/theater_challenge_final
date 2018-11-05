@@ -5,7 +5,7 @@ class TicketsController < ApplicationController
 
   def create
     ticket = Ticket.new(
-                         showtime_id: params[:showtime_id].to_i,
+                         showtime_id: params[:showtime_id],
                          full_name: params[:full_name],
                          email: params[:email],
                          credit_card_number: params[:credit_card_number],
@@ -15,12 +15,17 @@ class TicketsController < ApplicationController
     ticket.save
 
     if ticket.save
-     ticket.increment!(:seats_sold)
-     flash[:success] = "Your ticket to #{@showtime.movie.title} was purchased. Check you email now! "
+     ticket.showtime.increment!(:seats_sold)
+     ticket.showtime.theater.decrement!(:seat_capacity)
+     flash[:success] = "Your ticket to #{ticket.showtime.movie.title} was purchased. Check you email now! "
      redirect_to '/'
-    end
+    elsif
+      ticket.showtime.theater.seat_capacity == 0
+      flash[:warning] = "This movie is sold out, check out our other sweet flicks."
+    else
+      flash[:warning] = "This has been a problem please try again."
+      redirect_to '/tickets/new'
 
-    flash[:success] = "Ticket bought"
-    redirect_to '/'
+    end
   end
 end

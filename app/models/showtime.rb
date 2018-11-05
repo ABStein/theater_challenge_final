@@ -5,4 +5,5 @@ class Showtime < ApplicationRecord
 
   validates :movie_id, :theater_id, :start_time, presence: true
   validates :theater_id, uniqueness: { scope: :start_time }
+
 end

@@ -9,7 +9,7 @@
  <h2>Showtime:<div>
 <% @movie.showtimes.each do |showtime| %>
   <%= showtime.start_time.strftime('%A, %d %b %Y %l:%M %p') %>
-  <%= link_to "Buy Movie", "/tickets/new?showtime_id=#{showtime.id.to_i}", class: "btn btn-success" %>
+  <%= link_to "Buy Movie", "/tickets/new?showtime_id=#{showtime.id}", class: "btn btn-success" %>
 <% end %>
 </div></h2>
 
