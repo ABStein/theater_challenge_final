@@ -6,4 +6,12 @@ class Showtime < ApplicationRecord
   validates :movie_id, :theater_id, :start_time, presence: true
   validates :theater_id, uniqueness: { scope: :start_time }
 
+  # def seats_sold
+  #   tickets.count
+  # end
+
+  def sold_out?
+    seats_sold >= theater.seat_capacity
+  end
+
 end

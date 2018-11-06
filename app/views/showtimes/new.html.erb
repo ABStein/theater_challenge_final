@@ -1,0 +1,20 @@
+<h1>Add a Showtime</h1>
+
+<%= form_tag '/showtimes', method: :post do %>
+  <div>
+    Movie Id: <input type="text" name="movie_id">
+  </div>
+    <div>
+    Theater Id: <input type="text" name="theater_id">
+  </div>
+    <div>
+    Seats Sold: <input type="text" name="seats_sold">
+  </div>
+    <div>
+    Start Time: <input type="time" name="start_time">
+  </div>
+  <br>
+    <div>
+      <input type="submit" value="Save Slot">
+  </div>
+<% end %>

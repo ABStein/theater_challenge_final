@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   get '/showtimes/new' => 'showtimes#new'
   post '/showtimes' => 'showtimes#create'
+
+  get '/theaters/new' => 'theaters#new'
+  post '/theaters' => 'theaters#create'
 end

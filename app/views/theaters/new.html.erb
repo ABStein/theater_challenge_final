@@ -1,0 +1,14 @@
+<h1>Add a Theater</h1>
+
+<%= form_tag '/theaters', method: :post do %>
+  <div>
+    Theater Name: <input type="text" name="name">
+  </div>
+    <div>
+    Seating Capacity: <input type="text" name="seat_capacity">
+  </div>
+  <br>
+    <div>
+      <input type="submit" value="Commence Construction">
+  </div>
+<% end %>

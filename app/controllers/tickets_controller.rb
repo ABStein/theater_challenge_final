@@ -18,16 +18,14 @@ class TicketsController < ApplicationController
 
     ticket.save
 
-    if ticket.save
+    if ticket.showtime.sold_out?
+      flash[:warning] = "This movie is sold out, check out our other sweet flicks."
+    elsif ticket.save
      ticket.showtime.increment!(:seats_sold)
-     ticket.showtime.theater.decrement!(:seat_capacity)
      flash[:success] = "Your ticket to #{ticket.showtime.movie.title} was purchased. Check you email now! "
      redirect_to '/'
-    elsif
-      ticket.showtime.theater.seat_capacity == 0
-      flash[:warning] = "This movie is sold out, check out our other sweet flicks."
     else
-      flash[:warning] = "This has been a problem please try again."
+      flash[:warning] = "There has been a problem please try again."
       redirect_to '/tickets/new'
 
     end
