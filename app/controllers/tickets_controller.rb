@@ -4,13 +4,14 @@ class TicketsController < ApplicationController
     @showtimes = Showtime.all
     order_tickets = params[:sort_order]
 
+    # this conditional is for have sorting the tickets bought by movie
     if order_tickets
       @tickets = Ticket.all.order(:movie)
     end
   end
 
   def new
-    @showtime = Showtime.find(params[:showtime_id]) #this breaks when incorrect credit card
+    @showtime = Showtime.find(params[:showtime_id])
   end
 
   def create
@@ -23,8 +24,8 @@ class TicketsController < ApplicationController
                          )
 
     ticket.save
-    puts ticket.errors.full_messages
 
+    # This conditional is for accuratletly displaying to the user whether or not they are able to buy a movie, as well as validations for the creation of a ticket
     if ticket.showtime.sold_out?
       flash[:warning] = "This movie is sold out, check out our other sweet flicks."
     elsif ticket.save

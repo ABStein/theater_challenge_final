@@ -12,6 +12,7 @@ class ShowtimesController < ApplicationController
 
     showtime.save
 
+    # conditional to check validations on whether the fields met the criteria
     if showtime.save
     flash[:success] = "Your have created a new showtime, nice."
     redirect_to '/'
