@@ -7,7 +7,6 @@ class ShowtimesController < ApplicationController
     showtime = Showtime.new(
                             movie_id: params[:movie_id],
                             theater_id: params[:theater_id],
-                            seats_sold: params[:seats_sold],
                             start_time: params[:start_time]
                             )
 

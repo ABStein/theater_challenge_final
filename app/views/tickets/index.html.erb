@@ -1,8 +1,18 @@
 <h1>All Tickets Sold</h1>
+<br>
+<h2>
+  <table style="width:100%">
+    <tr>
+      <% @showtimes.each do |showtime| %>
+      <th><%= showtime.movie.title %>: <%= showtime.seats_sold %> purchased</th>
+      <% end %>
+    </tr>
+  </table>
+</h2>
 
 <div class="row">
   <% @tickets.each do |ticket| %>
-    <div class ="table-md-4 table-sm-6">
+    <div class="table-md-4 table-sm-6">
       <div>
         <ul>
         <h2>Name: <%= ticket.full_name %></h2>

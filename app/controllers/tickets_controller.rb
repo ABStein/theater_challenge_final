@@ -1,6 +1,12 @@
 class TicketsController < ApplicationController
   def index
     @tickets = Ticket.all
+    @showtimes = Showtime.all
+    order_tickets = params[:sort_order]
+
+    if order_tickets
+      @tickets = Ticket.all.order(:movie)
+    end
   end
 
   def new
@@ -21,13 +27,11 @@ class TicketsController < ApplicationController
     if ticket.showtime.sold_out?
       flash[:warning] = "This movie is sold out, check out our other sweet flicks."
     elsif ticket.save
-     ticket.showtime.increment!(:seats_sold)
      flash[:success] = "Your ticket to #{ticket.showtime.movie.title} was purchased. Check you email now! "
      redirect_to '/'
     else
       flash[:warning] = "There has been a problem please try again."
       redirect_to '/tickets/new'
-
     end
   end
 end
