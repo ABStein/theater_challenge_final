@@ -49,10 +49,15 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # to use ActionMailer delivery method
-  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.mailgun_settings = {
-    api_key: ENV['API_KEY'],
+    authentication: :plain,
+    address: "smtp.mailgun.org",
+    port: 587,
+    # api_key: ENV['API_KEY'],
     domain: ENV['MAILGUN_DOMAIN'],
+    user_name: ENV['DEFAULT_LOGIN'],
+    password: ENV['DEFAULT_PASSWORD']
   }
 
   # Use an evented file watcher to asynchronously detect changes in source code,

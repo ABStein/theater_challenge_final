@@ -1,7 +1,8 @@
 class UserMailer < ApplicationMailer
-  default from: 'notifications@example.com'
+  default from: 'abs19stein@gmail.com'
 
-  def email_reciept
+  def email_reciept(reciept)
+    @reciept = reciept
     @ticket = params[:ticket]
     @url  = '/tickets/new'
 

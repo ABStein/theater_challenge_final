@@ -30,6 +30,8 @@ class TicketsController < ApplicationController
       flash[:warning] = "This movie is sold out, check out our other sweet flicks."
     elsif ticket.save
      flash[:success] = "Your ticket to #{ticket.showtime.movie.title} was purchased. Check you email now!"
+     mg_client = Mailgun::Client.new(ENV["API_KEY"])
+     mg_client
      redirect_to '/'
     else
       flash[:warning] = "There has been a problem please try again."
