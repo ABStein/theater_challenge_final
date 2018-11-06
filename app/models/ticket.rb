@@ -4,7 +4,7 @@ class Ticket < ApplicationRecord
 
   validates :credit_card_number, length: { minimum: 13 }
   validates :credit_card_number , length: { maximum: 16 }
-  validates :showtime_id, :full_name, :email, presence: true
+  validates :showtime_id, :full_name, :email, :expiration_date, presence: true
   validates :email, confirmation: true
 
 end

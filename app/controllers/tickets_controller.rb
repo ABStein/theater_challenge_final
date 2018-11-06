@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
   end
 
   def new
-    @showtime = Showtime.find(params[:showtime_id])
+    @showtime = Showtime.find(params[:showtime_id]) #this breaks when incorrect credit card
   end
 
   def create
@@ -23,6 +23,7 @@ class TicketsController < ApplicationController
                          )
 
     ticket.save
+    puts ticket.errors.full_messages
 
     if ticket.showtime.sold_out?
       flash[:warning] = "This movie is sold out, check out our other sweet flicks."
@@ -31,7 +32,7 @@ class TicketsController < ApplicationController
      redirect_to '/'
     else
       flash[:warning] = "There has been a problem please try again."
-      redirect_to '/tickets/new'
+      redirect_to "/tickets/new?showtime_id=#{ticket.showtime_id}"
     end
   end
 end

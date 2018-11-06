@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   delete '/movies/:id' => 'movies#destroy'
 
   get '/all_tickets' => 'tickets#index'
-  get '/tickets' => 'tickets#index'
   get '/tickets/new' => 'tickets#new'
   post '/tickets' => 'tickets#create'
 
