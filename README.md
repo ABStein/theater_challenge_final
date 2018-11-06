@@ -4,7 +4,7 @@ This app is designed for movie owners and goers alike to find and sell tickets t
 
 * Schema Design 
   
-  After much deliberation I believe this is the way the schema design should liek for an app like this based on the needs of the cinema owner as well as being user friendly to the user as possible without an admin/user framework involved.
+  After much deliberation I believe this is the way the schema design should liek for an app like this based on the needs of the cinema owner as well as being user friendly to the user as possible without an admin/user framework involved. ![Schema](https://github.com/ABStein/theater_challenge_final/blob/master/schema_design.png)
   
 * Setup
 
