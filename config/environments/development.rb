@@ -50,15 +50,27 @@ Rails.application.configure do
 
   # to use ActionMailer delivery method
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.mailgun_settings = {
-    authentication: :plain,
-    address: "smtp.mailgun.org",
-    port: 587,
-    # api_key: ENV['API_KEY'],
-    domain: ENV['MAILGUN_DOMAIN'],
-    user_name: ENV['DEFAULT_LOGIN'],
-    password: ENV['DEFAULT_PASSWORD']
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['GMAIL_USERNAME'],
+   :password             => ENV['GMAIL_PASSWORD'],
+   :authentication       => "plain",
+  :enable_starttls_auto => true
   }
+
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for mailgun
+  ActionMailer::Base.smtp_settings = {
+    :port           => 587,
+    :address        => "smtp.mailgun.org",
+    :domain         => ENV['MAILGUN_DOMAIN'],
+    :user_name      => ENV['DEFAULT_LOGIN'],
+    :password       => ENV['DEFAULT_PASSWORD'],
+    :authentication => :plain,
+  }
+
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.

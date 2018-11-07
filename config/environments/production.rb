@@ -57,13 +57,29 @@ Rails.application.configure do
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
+
   # to use ActionMailer delivery method
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: ENV['API_KEY'],
-    domain: ENV['MAILGUN_DOMAIN'],
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['GMAIL_USERNAME'],
+   :password             => ENV['GMAIL_PASSWORD'],
+   :authentication       => "plain",
+  :enable_starttls_auto => true
   }
 
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for mailgun
+  ActionMailer::Base.smtp_settings = {
+    :port           => 587,
+    :address        => "smtp.mailgun.org",
+    :domain         => ENV['MAILGUN_DOMAIN'],
+    :user_name      => ENV['DEFAULT_LOGIN'],
+    :password       => ENV['DEFAULT_PASSWORD'],
+    :authentication => :plain,
+  }
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
