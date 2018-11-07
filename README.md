@@ -20,17 +20,8 @@ This app is designed for movie owners and goers alike to find and sell tickets t
 
   For the customers I added a bootstrap `disabled` button "Sold Out" in place of "Buy Ticket" when the movie is sold out so they wont buy a movie that is sold out.
 
+  For email confirmations I decided to use Mailgun and ActionMailer. I had to mess around with configurations for a bit but eventually got it. I used the figaro gem to store all passwords, usernames, domains, and api keys without having to store them in the codebase on github.
 
-* Configuration
+* Wishes/If I had more time
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  If I had more time and resources I would love to add a credit card processor, and seperate user/admin portals as mentioned above. I would obvisouly like to spruce the site up a bit with some more javascript and a framework for it.
