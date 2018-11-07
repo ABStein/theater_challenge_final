@@ -28,20 +28,13 @@ class TicketsController < ApplicationController
     # This conditional is for accuratletly displaying to the user whether or not they are able to buy a movie, as well as validations for the creation of a ticket
     if ticket.showtime.sold_out?
       flash[:warning] = "This movie is sold out, check out our other sweet flicks."
+      redirect_to '/'
     elsif ticket.save
      flash[:success] = "Your ticket to #{ticket.showtime.movie.title} was purchased. Check you email now!"
      UserMailer.email_receipt(@receipt, ticket).deliver
-
-     format.html { redirect_to @receipt, notice: 'Enjoy the show, we sent you an email of your receipt.' }
-     format.json { render :show, status: :created, location: @receipt }
-
      redirect_to '/'
     else
       flash[:warning] = "There has been a problem please try again."
-
-      format.html { render :new }
-      format.json { render json: @receipt.errors, status: :unprocessable_entity }
-
       redirect_to "/tickets/new?showtime_id=#{ticket.showtime_id}"
     end
   end
