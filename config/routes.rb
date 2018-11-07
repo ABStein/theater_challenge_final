@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/movies' => 'movies#create'
   get '/movies/:id' => 'movies#show'
   get '/movies/:id/edit' => 'movies#edit'
-  patch 'movies/:id' => 'movies#update'
+  patch '/movies/:id' => 'movies#update'
   delete '/movies/:id' => 'movies#destroy'
 
   get '/all_tickets' => 'tickets#index'
@@ -14,7 +14,11 @@ Rails.application.routes.draw do
 
   get '/showtimes/new' => 'showtimes#new'
   post '/showtimes' => 'showtimes#create'
+  get '/showtimes/:id/edit' => 'movies#edit'
+  patch '/showtimes/:id' => 'movies#update'
 
   get '/theaters/new' => 'theaters#new'
   post '/theaters' => 'theaters#create'
+  get '/theaters/:id/edit' => 'movies#edit'
+  patch '/theaters/:id' => 'movies#update'
 end

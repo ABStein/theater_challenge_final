@@ -20,5 +20,22 @@ class ShowtimesController < ApplicationController
       flash[:warning] = "There was a problem with your request, please try again."
       redirect_to '/showtimes/new'
     end
+
+    def edit
+      @showtime = Showtime.find(params[:id])
+    end
+
+    def update
+      @showtime = Showtime.find_by(id: params[:id])
+      @showtime.assign_attributes(
+                                  movie_id: params[:movie_id],
+                                  theater_id: params[:theater_id],
+                                  start_time: params[:start_time]
+                                  )
+
+      @showtime.save
+      flash[:success] = "Showtime successfully updated"
+      redirect_to "/"
+    end
   end
 end

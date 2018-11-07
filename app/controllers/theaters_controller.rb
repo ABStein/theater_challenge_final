@@ -21,4 +21,19 @@ class TheatersController < ApplicationController
     end
   end
 
+  def edit
+    @theater = Theater.find(params[:id])
+  end
+
+  def update
+    @theater = Theater.find_by(id: params[:id])
+    @theater.assign_attributes(
+                              name: params[:name],
+                              seat_capacity: params[:seat_capacity]
+                              )
+
+    @theater.save
+    flash[:success] = "Theater successfully updated"
+    redirect_to "/"
+  end
 end
