@@ -1,11 +1,11 @@
-# Movie.create!([
-#   {title: "Harry Potter", rating: "PG-13", runtime: "155", img: "https://dtvimages.hs.llnwd.net/e1//db_photos/movies/AllPhotosAPGI/34483/34483_aa.jpg"},
-#   {title: "Ironman ", rating: "PG-13", runtime: "120", img: "https://images-na.ssl-images-amazon.com/images/I/51eDErsnV0L.jpg"},
-#   {title: "Rudy", rating: "PG", runtime: "145", img: "https://images-na.ssl-images-amazon.com/images/I/51plfB1lQzL.jpg"},
-#   {title: "Saving Private Ryan", rating: "R", runtime: "175", img: "https://images-na.ssl-images-amazon.com/images/I/41zN6HGkL1L.jpg"},
-#   {title: "Stranger Things", rating: "TV-MA", runtime: "60", img: "https://images-na.ssl-images-amazon.com/images/I/71OB1IywjLL._SY679_.jpg"},
-#   {title: "Shrek", rating: "G", runtime: "90", img: "https://images-na.ssl-images-amazon.com/images/I/51wEYwlLldL.jpg"}
-# ])
+Movie.create!([
+  {id: 3,title: "Harry Potter", rating: "PG-13", runtime: "155", img: "https://dtvimages.hs.llnwd.net/e1//db_photos/movies/AllPhotosAPGI/34483/34483_aa.jpg"},
+  {id: 4,title: "Ironman ", rating: "PG-13", runtime: "120", img: "https://images-na.ssl-images-amazon.com/images/I/51eDErsnV0L.jpg"},
+  {id: 5,title: "Rudy", rating: "PG", runtime: "145", img: "https://images-na.ssl-images-amazon.com/images/I/51plfB1lQzL.jpg"},
+  {id: 6,title: "Saving Private Ryan", rating: "R", runtime: "175", img: "https://images-na.ssl-images-amazon.com/images/I/41zN6HGkL1L.jpg"},
+  {id: 7,title: "Stranger Things", rating: "TV-MA", runtime: "60", img: "https://images-na.ssl-images-amazon.com/images/I/71OB1IywjLL._SY679_.jpg"},
+  {id: 2,title: "Shrek", rating: "G", runtime: "90", img: "https://images-na.ssl-images-amazon.com/images/I/51wEYwlLldL.jpg"}
+])
 Theater.create!([
   {name: "Green Theater", seat_capacity: 25},
   {name: "Yellow Theater", seat_capacity: 10},
