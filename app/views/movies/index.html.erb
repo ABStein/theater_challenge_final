@@ -6,11 +6,12 @@
     <% movie_slice.each do |movie| %>
       <div class ="col-md-4 col-sm-6 movie-index-single">
         <div class="well">
+          <a href="/movies/<%= movie.id %>">
           <img src="<%= movie.img %>">
           <ul>
-          <h2>Title: <a href="/movies/<%= movie.id %>"><%= movie.title %></a></h2>
-          <h2>Runtime: <%= movie.display_time %></h2>
-          <h2>Rating: <%= movie.rating %></h2>
+          <h3>Title: <%= movie.title %></a></h3>
+          <h3>Runtime: <%= movie.display_time %></h3>
+          <h3>Rating: <%= movie.rating %></h3>
           </ul>
         </div>
       </div>

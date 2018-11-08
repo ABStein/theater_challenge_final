@@ -1,7 +1,7 @@
 <h1>Orders Dashboard</h1>
 <br>
 <h2>
-  <table style="width:75%">
+  <table style="width:100%">
     <tr>
       <% @showtimes.each do |showtime| %>
       <th><%= showtime.movie.title %>: <%= showtime.seats_sold %> purchased</th>

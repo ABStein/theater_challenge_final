@@ -17,6 +17,7 @@ class MoviesController < ApplicationController
 
      movie.save
      flash[:success] = "Movie successfully Created"
+     redirect_to '/'
   end
 
   def show
