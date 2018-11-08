@@ -24,4 +24,6 @@ This app is designed for movie owners and goers alike to find and sell tickets t
 
 * Wishes/If I had more time
 
-  If I had more time and resources I would love to add a credit card processor, and seperate user/admin portals as mentioned above. I would obvisouly like to spruce the site up a bit with some more javascript and a framework for it.
+  If I had more time and resources I would love to add a credit card processor, and seperate user/admin portals as mentioned above. I would obvisouly like to spruce the site up a bit with some more javascript and a framework for it, as well as better styling.
+
+  All in all as a solid POC with a backend that works very well, this app is not only malleable to suit the needs of the cinema owner but is also easy to add more exciting features later on to make it that much better.
