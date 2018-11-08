@@ -6,5 +6,6 @@ class Ticket < ApplicationRecord
   validates :credit_card_number , length: { maximum: 16 }
   validates :showtime_id, :full_name, :email, :expiration_date, presence: true
   validates :email, confirmation: true # this needs to change to uniqeness
+  # need a validation for if the email is not accepted by mailgun
 
 end

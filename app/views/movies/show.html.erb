@@ -6,18 +6,21 @@
 
 <h2>Rating: <%= @movie.rating %></h2>
 <h2>Runtime: <%= @movie.display_time %></h2>
- <h2>Showtime:<div>
-<% @movie.showtimes.each do |showtime| %>
-  <%= showtime.start_time.strftime('%A %B %e at %l:%M %p') %>
+<h2>Showtimes:</h2>
+<div>
+ <ul>
+  <% @movie.showtimes.each do |showtime| %>
+    <li><%= showtime.start_time.strftime('%A %B %e at %l:%M %p') %></li>
     <% if showtime.sold_out? %>
       <%= link_to "Sold Out", "/tickets/new?showtime_id=#{showtime.id}", class: "btn btn-danger disabled" %>
     <% else %>
       <%= link_to "Buy Movie", "/tickets/new?showtime_id=#{showtime.id}", class: "btn btn-success" %>
     <% end %>
-<% end %>
-</div></h2>
+  <% end %>
+ </ul>
+</div>
 
 
-
+<br>
 <%= link_to "Edit Movie", "/movies/#{ @movie.id }/edit", class: "btn btn-warning" %>
 <%= link_to "Delete Movie", "/movies/#{ @movie.id }", method: :delete, class: "btn btn-danger" %>
