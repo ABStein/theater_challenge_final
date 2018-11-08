@@ -15,5 +15,4 @@ class Showtime < ApplicationRecord
   def sold_out?
     seats_sold >= theater.seat_capacity
   end
-
 end

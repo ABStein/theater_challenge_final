@@ -1,20 +1,21 @@
-<h1>Now Playing</h1>
-<br>
-
 <% @movies.each_slice(3) do |movie_slice| %>
-  <div class="row">
-    <% movie_slice.each do |movie| %>
-      <div class ="col-md-4 col-sm-6 movie-index-single">
-        <div class="well">
-          <a href="/movies/<%= movie.id %>">
-          <img src="<%= movie.img %>">
-          <ul>
-          <h3>Title: <%= movie.title %></a></h3>
-          <h3>Runtime: <%= movie.display_time %></h3>
-          <h3>Rating: <%= movie.rating %></h3>
-          </ul>
+<div class="container">
+  <h1>Now Playing</h1>
+  <br>
+    <div class="row">
+      <% movie_slice.each do |movie| %>
+        <div class ="col-md-4 col-sm-6 movie-index-single">
+          <div class="well">
+            <a href="/movies/<%= movie.id %>">
+            <img src="<%= movie.img %>">
+            <ul>
+            <h3>Title: <%= movie.title %></a></h3>
+            <h3>Runtime: <%= movie.display_time %></h3>
+            <h3>Rating: <%= movie.rating %></h3>
+            </ul>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+</div>
 <% end %>
