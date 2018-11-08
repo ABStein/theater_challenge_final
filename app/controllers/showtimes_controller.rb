@@ -1,6 +1,7 @@
 class ShowtimesController < ApplicationController
   def new
-
+    @movies = Movie.all
+    @theaters = Theater.all
   end
 
   def create

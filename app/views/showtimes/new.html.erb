@@ -2,11 +2,24 @@
 
 <%= form_tag '/showtimes', method: :post do %>
   <div>
-    Movie Id: <input type="text" name="movie_id">
+    Movie:
+    <select name="movie_id" class="form-field-dark">
+      <%= @movies.each do |movie| %>
+        <option value="<%= movie.id %>"><%= movie.title %></option>
+      <% end %>
+    </select>
+    <br>
   </div>
+  <br>
     <div>
-    Theater Id: <input type="text" name="theater_id">
+    Theater:
+    <select name="theater_id" class="form-field-dark">
+      <%= @theaters.each do |theater| %>
+        <option value="<%= theater.id %>"><%= theater.name %></option>
+      <% end %>
+    </select>
   </div>
+  <br>
     <div>
     Start Time: <input type="time" name="start_time">
   </div>

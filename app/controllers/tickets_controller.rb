@@ -2,13 +2,13 @@ class TicketsController < ApplicationController
   def index
     @tickets = Ticket.all
     @showtimes = Showtime.all
-    order_tickets = params[:sort_order]
+    # sort_attribute = params[:sort]
 
     # this conditional is for have sorting the tickets bought by movie
-    if order_tickets
-      @tickets = Ticket.all.order(:movie)
-    end
-  end
+  #   if sort_attribute
+  #     @ticket = Ticket.where()
+  #   end
+  # end
 
   def new
     @showtime = Showtime.find(params[:showtime_id])
@@ -27,7 +27,7 @@ class TicketsController < ApplicationController
 
     # This conditional is for accuratletly displaying to the user whether or not they are able to buy a movie, as well as validations for the creation of a ticket
     if ticket.showtime.sold_out?
-      flash[:warning] = "This movie is sold out, check out our other sweet flicks."
+      flash[:warning] = "This movie is now sold out, check out our other sweet flicks."
       redirect_to '/'
     elsif ticket.save
      flash[:success] = "Your ticket to #{ticket.showtime.movie.title} was purchased. Check you email now!"

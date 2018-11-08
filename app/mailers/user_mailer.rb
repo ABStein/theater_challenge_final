@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
     message_params = {:from    => ENV['GMAIL_USERNAME'],
                       :to      => ticket.email,
                       :subject => "Receipt from AB's Flicks",
-                      :html => "<html><body><h1>Order Deatails</h1><p>You have successfully bought a ticket to #{ticket.showtime.movie.title} for #{ticket.showtime.start_time.strftime(' %A %B %e %l:%M %p')}. Enjoy the show!</p></body></html>"
+                      :html => "<html><body><h2>Order Details</h2><ul> <li>Name: #{ticket.full_name}</li><br> <li>Email: #{ticket.email}</li><br> <li>Movie: #{ticket.showtime.movie.title}</li><br> <li>When: #{ticket.showtime.start_time.strftime(' %A %B %e at %l:%M %p')}</li><br> <li>Theater: #{ticket.showtime.theater.name}</li> </ul></body></html>"
                       }
 
     mg_client.send_message ENV['MAILGUN_DOMAIN'], message_params
