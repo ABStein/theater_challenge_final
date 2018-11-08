@@ -2,13 +2,13 @@ class TicketsController < ApplicationController
   def index
     @tickets = Ticket.all
     @showtimes = Showtime.all
-    sort_attribute = params[:sort]
 
     # this conditional is for have sorting the tickets bought by movie
+    sort_attribute = params[:sort]
+
     if sort_attribute
       @tickets = Ticket.joins(:showtime => :movie).order("movies.title")
     end
-
   end
 
   def new

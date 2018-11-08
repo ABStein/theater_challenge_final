@@ -8,7 +8,7 @@
 <h2>Runtime: <%= @movie.display_time %></h2>
  <h2>Showtime:<div>
 <% @movie.showtimes.each do |showtime| %>
-  <%= showtime.start_time.strftime('%A, %d %b %Y %l:%M %p') %>
+  <%= showtime.start_time.strftime('%A %B %e at %l:%M %p') %>
     <% if showtime.sold_out? %>
       <%= link_to "Sold Out", "/tickets/new?showtime_id=#{showtime.id}", class: "btn btn-danger disabled" %>
     <% else %>

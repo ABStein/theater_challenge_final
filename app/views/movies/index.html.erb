@@ -1,7 +1,9 @@
-<% @movies.each_slice(3) do |movie_slice| %>
 <div class="container">
   <h1>Now Playing</h1>
   <br>
+</div>
+<% @movies.each_slice(3) do |movie_slice| %>
+<div class="container">
     <div class="row">
       <% movie_slice.each do |movie| %>
         <div class ="col-md-4 col-sm-6 movie-index-single">
