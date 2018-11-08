@@ -8,7 +8,7 @@ class TicketsController < ApplicationController
   #   if sort_attribute
   #     @ticket = Ticket.where()
   #   end
-  # end
+  end
 
   def new
     @showtime = Showtime.find(params[:showtime_id])
