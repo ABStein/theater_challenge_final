@@ -8,6 +8,8 @@ This app is designed for movie owners and goers alike to find and sell tickets t
 
   ![Schema](https://github.com/ABStein/theater_challenge_final/blob/master/schema%20design.png)
 
+  ![Link to the app here.](https://serene-beach-99108.herokuapp.com)
+
 * App design
 
   I decided to use ruby on rails for this project using OOP practices as well as leveraging activerecord to the best of its ability. One part of this project which I found to be a bit challenging was figuring out how to maintain ticket sales attached to specific cutsomers while not using a cart and an admin/user portal since technically the user has the ability to edit or delete a movie at will, but since this is going to our client first, I opted to keep it this way and with more time add in the ability for a admin/user portal that would not let the user do anything besides buy a ticket, while giving the cinema owner the ability to modify movies, showtimes, view ticket sales etc.
@@ -24,6 +26,6 @@ This app is designed for movie owners and goers alike to find and sell tickets t
 
 * Wishes/If I had more time
 
-  If I had more time and resources I would love to add a credit card processor, and seperate user/admin portals as mentioned above. I would obvisouly like to spruce the site up a bit with some more javascript and a framework for it, as well as better styling.
+  If I had more time and resources I would love to add a credit card processor, and seperate user/admin portals as mentioned above. I would obvisouly like to spruce the site up a bit with some more javascript and a framework for it, as well as better styling. I would also like to get a domain vaildated through mailgun to accept any email that a user will use and add validations where I left comments in `ticket.rb`.
 
-  All in all as a solid POC with a backend that works very well, this app is not only malleable to suit the needs of the cinema owner but is also easy to add more exciting features later on to make it that much better.
+  All in all as a solid POC with a backend that works very well, this app is not only malleable to suit the needs of the cinema owner, and very user friendly, but is also easy to add more exciting features later on to make it that much better.
