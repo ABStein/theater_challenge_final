@@ -4,5 +4,6 @@ class Theater < ApplicationRecord
 
   validates :name, :seat_capacity, presence: true
   validates :name, uniqueness: true
+  validates :seat_capacity, numericality: { only_integer: true }
 
 end
