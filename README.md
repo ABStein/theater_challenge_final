@@ -8,8 +8,6 @@ This app is designed for movie owners and goers alike to find and sell tickets t
 
   ![Schema](https://github.com/ABStein/theater_challenge_final/blob/master/schema%20design.png)
 
-  ![Link to the app here.](https://serene-beach-99108.herokuapp.com)
-
 * App design
 
   I decided to use ruby on rails for this project using OOP practices as well as leveraging activerecord to the best of its ability. One part of this project which I found to be a bit challenging was figuring out how to maintain ticket sales attached to specific cutsomers while not using a cart and an admin/user portal since technically the user has the ability to edit or delete a movie at will, but since this is going to our client first, I opted to keep it this way and with more time add in the ability for a admin/user portal that would not let the user do anything besides buy a ticket, while giving the cinema owner the ability to modify movies, showtimes, view ticket sales etc.
