@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
     @receipt = receipt
     @url  = '/'
 
-    mg_client = Mailgun::Client.new ENV['API_KEY']
+    mg_client = Mailgun::Client.new ENV['MAILGUN_API_KEY']
 
     message_params = {:from    => ENV['GMAIL_USERNAME'],
                       :to      => ticket.email,

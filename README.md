@@ -20,7 +20,7 @@ This app is designed for movie owners and goers alike to find and sell tickets t
 
   For the customers I added a bootstrap `disabled` button "Sold Out" in place of "Buy Ticket" when the movie is sold out so they wont buy a movie that is sold out.
 
-  For email confirmations I decided to use Mailgun and ActionMailer. I had to mess around with configurations for a bit but eventually got it. I used the figaro gem to store all passwords, usernames, domains, and api keys without having to store them in the codebase on github.
+  For email confirmations I decided to use Mailgun and ActionMailer. I had to mess around with configurations for a bit but eventually got it however, since I would have needed to get a domain and add the DNS confirmations to allow mailgun to send an email to any user who has entered an email for a ticket and there is no working domain through heroku this will work via the sandbox domain for them. If I add authorized recipients, this will do for now. I used the figaro gem to store all passwords, usernames, domains, and api keys without having to store them in the codebase on github.
 
 * Wishes/If I had more time
 
